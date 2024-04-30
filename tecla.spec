@@ -1,12 +1,12 @@
 Summary:	Tecla - keyboard layout viewer
 Summary(pl.UTF-8):	Tecla - przeglądarka układów klawiatury
 Name:		tecla
-Version:	45.0
+Version:	46.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://download.gnome.org/sources/tecla/45/%{name}-%{version}.tar.xz
-# Source0-md5:	68a44119c5c76ca952a4cb6ca2e0fd22
+Source0:	https://download.gnome.org/sources/tecla/46/%{name}-%{version}.tar.xz
+# Source0-md5:	8e3ecd44ed17dab85aa281df19357395
 URL:		https://gitlab.gnome.org/GNOME/tecla
 BuildRequires:	gtk4-devel >= 4.0
 BuildRequires:	libadwaita-devel >= 1.4
