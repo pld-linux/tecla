@@ -1,18 +1,18 @@
 Summary:	Tecla - keyboard layout viewer
 Summary(pl.UTF-8):	Tecla - przeglądarka układów klawiatury
 Name:		tecla
-Version:	47.0
-Release:	2
+Version:	48.0.2
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://download.gnome.org/sources/tecla/47/%{name}-%{version}.tar.xz
-# Source0-md5:	68233c486bfe8b86f759fdd9ae1be00a
+Source0:	https://download.gnome.org/sources/tecla/48/%{name}-%{version}.tar.xz
+# Source0-md5:	6a5af5671fd16e116484dc834117ae2a
 URL:		https://gitlab.gnome.org/GNOME/tecla
 BuildRequires:	gtk4-devel >= 4.0
 BuildRequires:	libadwaita-devel >= 1.4
 BuildRequires:	meson >= 0.54
 BuildRequires:	ninja >= 1.5
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 # wayland-client
 BuildRequires:	wayland-devel
@@ -48,15 +48,16 @@ Pliki programistyczne narzędzia Tecla.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
+# not supported by glibc (as of 2.41)
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{name}
